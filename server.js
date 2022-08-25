@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 app.use(express.json())
+const PORT = process.env.PORT;
 
 api_key = "1766ce4c296c4fc3b48174314222408";
 
@@ -24,7 +25,7 @@ app.post('/getWeather', async function(req, res){
     res.json(data);
 })
 
-app.listen(8000, ()=>{
+app.listen(PORT, ()=>{
     console.log(
         'Server listening at Port 3000'
         )
